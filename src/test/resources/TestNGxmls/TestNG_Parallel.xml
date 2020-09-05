@@ -9,7 +9,7 @@
         </classes>
     </test>
 
-    <test name="SignInTest" preserve-order="true">
+    <test name="CheckoutTest" preserve-order="true">
         <classes>
             <class name="SignInTest"/>
         </classes>
