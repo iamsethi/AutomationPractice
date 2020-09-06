@@ -3,3 +3,4 @@ http://localhost:8099/
 
 
 https://docs.qameta.io/allure/#_installing_a_commandline
+ allure serve target/allure-results
