@@ -1,17 +1,16 @@
 package com.automationpractice.tests;
 
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class MyFirstTest {
-    static WebDriver driver;
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+public class MyFirstTest extends BaseTest {
 
     @Test
-    void lauchBrowser() {
-        System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/linux/chromedriver");
-        driver=new ChromeDriver();
+  //  @DisplayName("Display name has highest precedence")
+    void this_is_my_first_selenium_test() {
         driver.get("http://localhost:8099/");
-        driver.quit();
+
     }
 }
