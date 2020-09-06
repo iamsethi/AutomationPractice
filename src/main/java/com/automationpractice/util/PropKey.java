@@ -2,7 +2,10 @@ package com.automationpractice.util;
 
 public enum PropKey {
     URL("url"),
-    PORT("port");
+    PORT("port"),
+    BROWSER("browser"),
+    BROWSERMANAGER("browserManager");
+
 
     private String propVal;
 
