@@ -1,9 +1,9 @@
 package com.automationpractice.pages;
 
 import com.automationpractice.driver.DriverManager;
+import com.automationpractice.util.LogHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -15,9 +15,6 @@ import java.util.List;
 import static com.automationpractice.util.TimeUtil.getExplicitWait;
 
 public class HtmlPageObject extends DriverManager {
-
-
-    private WebDriver driver = getDriver();
 
     /**
      * Method to find element by css
@@ -138,6 +135,9 @@ public class HtmlPageObject extends DriverManager {
         WebElement textBox = findElementBy(by);
         textBox.clear();
         textBox.sendKeys(text);
+
+        LogHelper.logToReport("Typing text : " + text + " inside textbox" +
+                " with locator: " + by);
     }
 
     /**
@@ -149,6 +149,10 @@ public class HtmlPageObject extends DriverManager {
     public void enterTextIntoTextBox(WebElement element, String text) {
         element.clear();
         element.sendKeys(text);
+
+        LogHelper.logToReport("Typing text : " + text + " inside textbox" +
+                " with locator: " + element);
+
     }
 
     /**

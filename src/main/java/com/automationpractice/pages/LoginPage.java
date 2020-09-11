@@ -1,5 +1,6 @@
 package com.automationpractice.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,13 +34,14 @@ public class LoginPage extends BasePage {
      * @param password
      * @return
      */
-    public ItemPage doLogin(String userName, String password) {
+    @Step("Logging in with username: {0} & password: {1}")
+    public MyAccountPage doLogin(String userName, String password) {
 
         enterTextIntoTextBox(emailField, userName);
         enterTextIntoTextBox(passwordField, password);
 
         clickLinkOrBtn(signInButton);
-        return new ItemPage(driver);
+        return new MyAccountPage(driver);
     }
 
     /**
@@ -47,6 +49,7 @@ public class LoginPage extends BasePage {
      *
      * @return
      */
+    @Step("Navigating to user registration page with email: {0}")
     public RegistrationPage navigateToRegistrationPage(String email) {
         enterTextIntoTextBox(createEmail, email);
         clickLinkOrBtn(createAccountButton);

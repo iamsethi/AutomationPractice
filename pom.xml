@@ -20,6 +20,17 @@
         <allure-maven.version>2.13.0</allure-maven.version>
         <aspectj.version>1.9.5</aspectj.version>
 
+        <!-- SureFire properties-->
+        <surefire.forkCount>1C</surefire.forkCount>
+        <surefire.reuseForks>false</surefire.reuseForks>
+        <surefire.threadCount>2</surefire.threadCount>
+        <surefire.parallel>methods</surefire.parallel>
+
+        <systemPropertyVariables>
+            <elementScreenShot>DISABLE</elementScreenShot>
+            <browser></browser>
+        </systemPropertyVariables>
+
     </properties>
 
     <dependencies>
@@ -88,6 +99,13 @@
             <version>1.0.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -101,6 +119,14 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
+
+
+                    <parallel>${surefire.parallel}</parallel>
+                    <forkCount>${surefire.forkCount}</forkCount>
+                    <reuseForks>${surefire.reuseForks}</reuseForks>
+                    <threadCount>${surefire.threadCount}</threadCount>
+
+
                 </configuration>
                 <dependencies>
                     <dependency>

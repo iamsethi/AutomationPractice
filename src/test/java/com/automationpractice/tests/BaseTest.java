@@ -1,24 +1,17 @@
 package com.automationpractice.tests;
 
-import com.automationpractice.util.PropertyReader;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import com.automationpractice.driver.DriverManager;
+import com.automationpractice.pages.HomePage;
+import org.junit.jupiter.api.BeforeEach;
 
-public class BaseTest {
-    static WebDriver driver;
-    static PropertyReader prop = PropertyReader.getInstance();
+public class BaseTest extends DriverManager {
+    protected HomePage homePage;
 
-    @BeforeAll
-    public static void init() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/linux/chromedriver");
-        driver = new ChromeDriver();
+    @BeforeEach
+    public void methodLevelSetup() {
+        homePage = new HomePage(driver);
+        homePage.navigateToApp();
     }
 
-    @AfterAll
-    public static void cleanUp() {
-        driver.quit();
-    }
 
 }

@@ -1,5 +1,6 @@
 package com.automationpractice.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,10 +30,10 @@ public class RegistrationPage extends BasePage {
     private WebElement lastname;
 
     @FindBy(id = "address1")
-    private WebElement address_line2;
+    private WebElement address_line1;
 
     @FindBy(id = "address2")
-    private WebElement address_line1;
+    private WebElement address_line2;
 
     @FindBy(id = "city")
     private WebElement txt_city;
@@ -59,7 +60,8 @@ public class RegistrationPage extends BasePage {
      * @param password
      * @return
      */
-    public RegistrationPage addNewUserInformation(String customerFirstname, String customerLastname, String password) {
+    @Step("Adding new user information with customerFirstName: {0} , customerLastName: {1} , password {2}")
+    public RegistrationPage addPersonalInformation(String customerFirstname, String customerLastname, String password) {
 
         isTextPresentOnPage("YOUR PERSONAL INFORMATION");
         enterTextIntoTextBox(txt_customerFirstname, customerFirstname);
@@ -82,6 +84,10 @@ public class RegistrationPage extends BasePage {
      * @param zip
      * @return
      */
+
+    @Step("Adding account information- firstname:{0} , lastName:{1}," +
+            " phone:{2}, addr1:{3}, addr2: {4}, city:{5}, " +
+            "state:{6}, zip:{7}")
     public RegistrationPage addAccountInformation(String firstName,
                                                   String lastName,
                                                   String phone,
@@ -110,9 +116,10 @@ public class RegistrationPage extends BasePage {
      *
      * @return
      */
-    public ItemPage clickSaveAccountInformation() {
+    @Step("Saving account information")
+    public MyAccountPage clickSaveAccountInformation() {
         clickLinkOrBtn(submitAccount);
-        return new ItemPage(driver);
+        return new MyAccountPage(driver);
     }
 
 

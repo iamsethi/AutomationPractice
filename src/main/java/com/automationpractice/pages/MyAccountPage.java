@@ -1,12 +1,13 @@
 package com.automationpractice.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AccountsPage extends BasePage {
+public class MyAccountPage extends BasePage {
 
-    public AccountsPage(WebDriver driver) {
+    public MyAccountPage(WebDriver driver) {
         super(driver);
     }
 
@@ -21,6 +22,7 @@ public class AccountsPage extends BasePage {
      *
      * @return
      */
+    @Step("Verify proper username is shown in the header")
     public String getGreetingMessage() {
         return getTextFromElement(accountName);
     }
@@ -30,6 +32,7 @@ public class AccountsPage extends BasePage {
      *
      * @return
      */
+    @Step("Verify log out action is available")
     public boolean isLogoutButtonDisplayed() {
         return logout.isDisplayed();
     }
