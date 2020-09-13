@@ -11,6 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import static com.automationpractice.util.Helper.getAppUrl;
+import static com.automationpractice.util.LogHelper.log;
 
 public class HomePage extends BasePage {
 
@@ -31,7 +32,7 @@ public class HomePage extends BasePage {
         try {
             driver.navigate().to(new URL(getAppUrl()));
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+           log().info(e);
         }
     }
 

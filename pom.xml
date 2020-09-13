@@ -26,10 +26,6 @@
         <surefire.threadCount>2</surefire.threadCount>
         <surefire.parallel>methods</surefire.parallel>
 
-        <systemPropertyVariables>
-            <elementScreenShot>DISABLE</elementScreenShot>
-            <browser></browser>
-        </systemPropertyVariables>
 
     </properties>
 
@@ -103,6 +99,20 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.30</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.13.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.13.3</version>
         </dependency>
 
 

@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+@DisplayName("Login Tests")
 public class LoginTest extends BaseTest {
 
     @Test

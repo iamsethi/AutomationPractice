@@ -1,9 +1,9 @@
 package com.automationpractice.pages;
 
-import com.automationpractice.driver.DriverManager;
 import com.automationpractice.util.LogHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -14,7 +14,9 @@ import java.util.List;
 
 import static com.automationpractice.util.TimeUtil.getExplicitWait;
 
-public class HtmlPageObject extends DriverManager {
+public class HtmlPageObject {
+
+    protected WebDriver driver;
 
     /**
      * Method to find element by css

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Random;
 
+import static com.automationpractice.util.LogHelper.log;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -48,5 +49,7 @@ public class RegistrationTest extends BaseTest {
                 () -> assertTrue("Logout button is not displayed", myAccountPage.isLogoutButtonDisplayed())
         );
 
+        log().info("First Name : " +firstName);
+        log().info("Last Name : " +lastName);
     }
 }

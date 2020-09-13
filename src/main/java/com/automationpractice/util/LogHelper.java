@@ -1,6 +1,8 @@
 package com.automationpractice.util;
 
 import io.qameta.allure.Step;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LogHelper {
 
@@ -26,5 +28,9 @@ public class LogHelper {
     @Step("{0}")
     private static synchronized void logToAllureReport(String message){
 
+    }
+
+    public static synchronized Logger log() {
+        return LogManager.getLogger(Thread.currentThread().getStackTrace()[2].getClassName());
     }
 }

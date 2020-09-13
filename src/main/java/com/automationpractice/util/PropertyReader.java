@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import static com.automationpractice.util.LogHelper.log;
+
 public class PropertyReader {
     private static volatile PropertyReader propInstance;
 
@@ -27,7 +29,7 @@ public class PropertyReader {
             if (prop.getProperty(propertyName) != null)
                 return prop.getProperty(propertyName);
         } catch (IOException e) {
-            e.printStackTrace();
+            log().info(e);
         }
         return null;
     }
